@@ -9,16 +9,16 @@
 local config = {
         -- Configure AstroNvim updates
         updater = {
-                remote = "origin", -- remote to use
-                channel = "stable", -- "stable" or "nightly"
-                version = "latest", -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
-                branch = "main", -- branch name (NIGHTLY ONLY)
-                commit = nil,  -- commit hash (NIGHTLY ONLY)
-                pin_plugins = nil, -- nil, true, false (nil will pin plugins on stable only)
-                skip_prompts = false, -- skip prompts about breaking changes
+                remote = "origin",     -- remote to use
+                channel = "stable",    -- "stable" or "nightly"
+                version = "latest",    -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
+                branch = "main",       -- branch name (NIGHTLY ONLY)
+                commit = nil,          -- commit hash (NIGHTLY ONLY)
+                pin_plugins = nil,     -- nil, true, false (nil will pin plugins on stable only)
+                skip_prompts = false,  -- skip prompts about breaking changes
                 show_changelog = true, -- show the changelog after performing an update
-                auto_reload = false, -- automatically reload and sync packer after a successful update
-                auto_quit = false, -- automatically quit the current session after a successful update
+                auto_reload = false,   -- automatically reload and sync packer after a successful update
+                auto_quit = false,     -- automatically quit the current session after a successful update
                 -- remotes = { -- easily add new remotes to track
                 --   ["remote_name"] = "https://remote_url.come/repo.git", -- full remote url
                 --   ["remote2"] = "github_user/repo", -- GitHub user/repo shortcut,
@@ -41,36 +41,36 @@ local config = {
                 opt = {
                         -- set to true or false etc.
                         relativenumber = true, -- sets vim.opt.relativenumber
-                        number = true, -- sets vim.opt.number
-                        spell = false, -- sets vim.opt.spell
-                        signcolumn = "auto", -- sets vim.opt.signcolumn to auto
-                        wrap = false, -- sets vim.opt.wrap
-                        ignorecase = true, -- Set insensitive case search
-                        smartcase = true, --If there is an uppercase letter it will work as ignorecase is off
+                        number = true,         -- sets vim.opt.number
+                        spell = false,         -- sets vim.opt.spell
+                        signcolumn = "auto",   -- sets vim.opt.signcolumn to auto
+                        wrap = false,          -- sets vim.opt.wrap
+                        ignorecase = true,     -- Set insensitive case search
+                        smartcase = true,      --If there is an uppercase letter it will work as ignorecase is off
                         clipboard = "",
-                        scrolloff = 8, -- Scroll when you are 8 lines far from top/bottom
-                        timeoutlen = 150, -- Sets keycode timeout
+                        scrolloff = 8,         -- Scroll when you are 8 lines far from top/bottom
+                        timeoutlen = 150,      -- Sets keycode timeout
                         ttimeoutlen = 0,
-                        updatetime = 100, -- Git checks file every 100ms(default 4000ms)
-                        undofile = true, -- Persistent undo, undo works after closing file
-                        incsearch = true, -- Searches while typing
-                        swapfile = false, -- Doesn't create swap files
-                        expandtab = true, -- Converts tabs to spaces
-                        tabstop = 2, -- The width of a TAB is set to 2. Still it is a \t. It is just that Vim will interpret it to have  width of 2.
-                        shiftwidth = 2, -- Indents will have a width of 2
-                        softtabstop = 2, -- Sets the number of columns for a TAB
-                        hidden = true -- Hide buffer
+                        updatetime = 100,      -- Git checks file every 100ms(default 4000ms)
+                        undofile = true,       -- Persistent undo, undo works after closing file
+                        incsearch = true,      -- Searches while typing
+                        swapfile = false,      -- Doesn't create swap files
+                        expandtab = true,      -- Converts tabs to spaces
+                        tabstop = 2,           -- The width of a TAB is set to 2. Still it is a \t. It is just that Vim will interpret it to have  width of 2.
+                        shiftwidth = 2,        -- Indents will have a width of 2
+                        softtabstop = 2,       -- Sets the number of columns for a TAB
+                        hidden = true          -- Hide buffer
                 },
                 g = {
-                        mapleader = " ",       -- sets vim.g.mapleader
-                        autoformat_enabled = true, -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)
-                        cmp_enabled = true,    -- enable completion at start
-                        autopairs_enabled = false, -- enable autopairs at start
-                        diagnostics_enabled = true, -- enable diagnostics at start
+                        mapleader = " ",                   -- sets vim.g.mapleader
+                        autoformat_enabled = true,         -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)
+                        cmp_enabled = true,                -- enable completion at start
+                        autopairs_enabled = false,         -- enable autopairs at start
+                        diagnostics_enabled = true,        -- enable diagnostics at start
                         status_diagnostics_enabled = true, -- enable diagnostics in statusline
-                        icons_enabled = true,  -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
-                        ui_notifications_enabled = true, -- disable notifications when toggling UI elements
-                        heirline_bufferline = false, -- enable new heirline based bufferline (requires :PackerSync after changing)
+                        icons_enabled = true,              -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
+                        ui_notifications_enabled = true,   -- disable notifications when toggling UI elements
+                        heirline_bufferline = false,       -- enable new heirline based bufferline (requires :PackerSync after changing)
                         vim_markdown_folding_disabled = 1,
                         fzf_layout = { window = { width = 0.9, height = 0.9 } },
                         fzf_preview_window = { 'right:50%' },
@@ -164,7 +164,7 @@ local config = {
                 formatting = {
                         -- control auto formatting on save
                         format_on_save = {
-                                enabled = true, -- enable or disable format on save globally
+                                enabled = true,     -- enable or disable format on save globally
                                 allow_filetypes = { -- enable format on save for specified filetypes only
                                         -- "go",
                                 },
@@ -236,7 +236,7 @@ local config = {
                         ["<C-u>"] = { "30k", desc = "Change <C-u> to 30k instead" },
                         ["<C-t>"] = { ":FloatermNew --height=0.8 --width=0.8<CR>", remap = false, desc =
                         "Open terminal in floating window" },
-                        ["<C-o>"] = { ":map <C-o> :Neotree toggle<CR>", remap = false, desc = "Toggle Neotree" },
+                        ["<C-o>"] = { ":Neotree toggle<CR>", remap = false, desc = "Toggle Neotree" },
                         ["<C-_>"] = { function() require("Comment.api").toggle.linewise.current() end, desc =
                         "Toggles comment with Ctrl+/ NOT _, vim for some reason registers <C-/> as <C-_>" },
                         ["<C-s>"] = { "1z=", desc = "Corrects mistyped word" },
@@ -332,7 +332,7 @@ local config = {
                         }
                         return config -- return final config table
                 end,
-                treesitter = { -- overrides `require("treesitter").setup(...)`
+                treesitter = {        -- overrides `require("treesitter").setup(...)`
                         -- ensure_installed = { "lua" },
                 },
                 -- use mason-lspconfig to configure LSP installations
