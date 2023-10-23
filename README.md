@@ -25,6 +25,13 @@ brew install --cask ./brew-custom/local-nerd-font/font-hack-nerd-font.rb
 
 If using ITerm2 you need to go to Settings -> Profiles -> Text -> Font -> Hack Nerd Font (if it's already selected, change to another font and change back to apply the changes)
 
+If you want to exlude neovim from being updated:
+```bash
+brew pin neovim
+# To check all pinned packages
+brew list --pinned
+```
+
 \*formulas are downloaded from:
 
 - https://github.com/Homebrew/homebrew-core
