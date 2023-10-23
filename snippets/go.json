@@ -1,0 +1,7 @@
+{
+  "setup": {
+    "prefix": ["ife"],
+    "body": ["if err != nil {", "\t$1", "}"],
+    "description": "Shorthand err handling"
+  }
+}

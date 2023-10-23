@@ -1,3 +1,6 @@
+-- Load custom snippets
+require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./lua/user/snippets" } })
+
 local a = vim.api
 local c = vim.cmd
 local t_builtin = require 'telescope.builtin'
@@ -38,6 +41,9 @@ function models.apply()
 
   -- Uncomment the following to have Vim jump to the last position when reopening a file
   c('autocmd BufReadPost * if line("\'\\"") > 0 && line("\'\\"") <= line("$") | exe "normal! g`\\"" | endif')
+
+  -- Yaml syntax for *.sls files
+  c('autocmd BufNewFile,BufRead *.sls setfiletype yaml')
 end
 
 return models

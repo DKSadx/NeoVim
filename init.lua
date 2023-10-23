@@ -6,6 +6,13 @@
 -- normal format is "key = value". These also handle array like data structures
 -- where a value with no key simply has an implicit numeric key
 
+-- NOTES
+-- Keybindings:
+--   K          - show nvim-cmp (or coc) documentation
+--   <esc><esc> - go to normal mode in terminal
+--   <C-n>      - open 2nd terminal (works only in terminal mode)
+
+
 local config = {
         -- Configure AstroNvim updates
         updater = {
@@ -175,7 +182,7 @@ local config = {
                         disabled = { -- disable formatting capabilities for the listed language servers
                                 -- "sumneko_lua",
                         },
-                        timeout_ms = 1000, -- default format timeout
+                        timeout_ms = 3000, -- default format timeout
                         -- filter = function(client) -- fully override the default formatting function
                         --   return true
                         -- end
@@ -242,9 +249,9 @@ local config = {
                         ["<C-s>"] = { "1z=", desc = "Corrects mistyped word" },
                         ["<C-g>"] = { ":FloatermNew --height=1.0 --width=1.0 lazygit<CR>", remap = false, silent = true, desc =
                         "Opens lazygit in floating window" },
-                        ["<C-n>"] = {
-                                ":FloatermNew --height=1.0 --width=1.0 MDV_THEME=960.847 mdv % \\| less -r<CR>", remap = false, silent = true, desc =
-                        "Opens markdown preview in floating window" },
+                        -- ["<C-m>"] = {
+                        --         ":FloatermNew --height=1.0 --width=1.0 MDV_THEME=960.847 mdv % | less -r<CR>", remap = false, silent = true, desc =
+                        -- "Opens markdown preview in floating window" },
                         ["<C-x>"] = { ":bd<CR>", remap = false, desc = "Close buffer" },
                         ["<C-e>"] = { ":tabedit %<CR>", remap = false, desc = "Open split temp in new tab" },
                         -- RgRaw required repgrep and 'vim-agriculture' plugin
@@ -275,7 +282,8 @@ local config = {
                 -- Terminal mode
                 t = {
                         --
-                        [","] = { "<C-\\><C-N>", desc = "Remaps exit from nvim terminal to ,", remap = false }
+                        ["<esc><esc>"] = { "<C-\\><C-N>", desc = "Remaps exit from nvim terminal to <C-q>", remap = false },
+                        ["<C-n>"] = { "<C-\\><C-N>:2ToggleTerm direction=horizontal<CR>", desc = "Open a second terminal", remap = false },
                         -- setting a mapping to false will disable it
                         -- ["<esc>"] = false,
                 },
@@ -292,6 +300,7 @@ local config = {
                         { "junegunn/fzf" },
                         { "junegunn/fzf.vim" },
                         { "jesseleite/vim-agriculture" }, -- Used together with fzf to append flag to Rg and Ag
+                        { "towolf/vim-helm" },
 
                         -------------------------------
 
@@ -442,5 +451,7 @@ local config = {
 -- Load custom settings
 local custom_settings = require('user.custom')
 custom_settings.apply()
+
+--  dGVzdAo=
 
 return config
