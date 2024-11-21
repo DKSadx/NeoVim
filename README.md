@@ -1,5 +1,9 @@
-### IMPORTANT NOTE:
+# NOTE: This repo is deprecated as it uses the old AstroVim syntax (pre V4).
+For the updated version, check out https://github.com/DKSadx/astrovim-v4
 
+---
+OLD SETUP
+---
 NOT compatible with:
 
 - AstroVim 3.x+
